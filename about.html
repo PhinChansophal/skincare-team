@@ -37,12 +37,20 @@
                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             }
 
-            .custom-circle-image {
-                width: 80px;
-                height: 80px;
-                object-fit: cover;
+            .team-image-container {
+                width: 100px;
+                height: 100px;
+                min-width: 100px;
+                position: relative;
+                overflow: hidden;
                 border-radius: 50%;
                 border: 3px solid #eaeaea;
+            }
+
+            .team-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
 
             .team-info h5 {
@@ -67,6 +75,13 @@
 
             .custom-modal-btn:hover {
                 color: #dc3545; /* Bootstrap 'danger' red */
+            }
+
+            /* Ensure all images have the same dimensions */
+            .team-thumb img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
 
         </style>
@@ -130,21 +145,38 @@
                 </div>
             </nav>
 
-            <header class="site-header section-padding-img site-header-image">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-6 col-12 header-info">
-                            <h1>
-                                <span class="d-block text-primary">Student</span>
-                                <span class="d-block text-dark">Project Team</span>
+            <header class="site-header section-padding-img site-header-image text-center" style="background: linear-gradient(135deg, #f8fafc 0%, #e3e6f3 100%); position: relative; overflow: hidden;">
+                <div class="container position-relative py-5">
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center mb-4 mb-lg-0">
+                            <h1 style="
+                                font-size: clamp(2.5rem, 6vw, 4.5rem);
+                                color: red;
+                                letter-spacing: 2px;
+                                line-height: 1.1;
+                                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+                                margin-bottom: 1rem;
+                                text-shadow: 0 2px 16px rgba(0,0,0,0.04);
+                            ">
+                                Student Project Team
                             </h1>
+                            <p style="
+                                color: #222;
+                                font-weight: 400;
+                                font-size: 1.25rem;
+                                line-height: 1.6;
+                                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+                                margin: 0 auto;
+                                max-width: 540px;
+                            ">
+                                Meet the passionate team behind the Skincare project. We blend creativity, technology, and teamwork to deliver a modern, user-friendly platform for everyone.
+                            </p>
                         </div>
-                        
                     </div>
+                    <!-- Decorative shapes for modern look -->
+                    <div style="position: absolute; top: -40px; right: -60px; width: 180px; height: 180px; background: #e0e7ff; border-radius: 50%; opacity: 0.3; z-index: 0;"></div>
+                    <div style="position: absolute; bottom: -50px; left: -70px; width: 120px; height: 120px; background: #fbcfe8; border-radius: 50%; opacity: 0.25; z-index: 0;"></div>
                 </div>
-
-                <img src="images/header/businesspeople-meeting-office-working.jpg" class="header-image img-fluid" alt="">
             </header>
 
             <section class="team section-padding">
@@ -157,7 +189,9 @@
 
                         <div class="col-lg-4 mb-4 col-12">
                             <div class="team-thumb d-flex align-items-center">
-                                <img src="/img/13.png" class="img-fluid custom-circle-image team-image me-4" alt="">
+                                <div class="team-image-container me-4">
+                                    <img src="/img/13.png" class="team-image" alt="Pot VongSocheata">
+                                </div>
 
                                 <div class="team-info">
                                     <h5 class="mb-0">Pot VongSocheata</h5>
@@ -173,15 +207,17 @@
 
                         <div class="col-lg-4 mb-4 col-12">
                             <div class="team-thumb d-flex align-items-center">
-                                <img src="/img/14.png" class="img-fluid custom-circle-image team-image me-4" alt="">
+                                <div class="team-image-container me-4">
+                                    <img src="/img/14.png" class="team-image" alt="Bout Sreychea">
+                                </div>
 
                                 <div class="team-info">
                                     <h5 class="mb-0">Bout Sreychea</h5>
                                     <strong class="text-muted">Member Project</strong>
 
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn custom-modal-btn" data-bs-toggle="modal" data-bs-target="#kelly">
-                                      <i class="bi-plus-circle-fill"></i>
+                                    <button type="button" class="btn custom-modal-btn text-danger" data-bs-toggle="modal" data-bs-target="#kelly">
+                                        <i class="bi-plus-circle-fill"></i>
                                     </button>
                                 </div>
                             </div>
@@ -189,14 +225,51 @@
 
                         <div class="col-lg-4 mb-lg-0 mb-4 col-12">
                             <div class="team-thumb d-flex align-items-center">
-                                <img src="/img/15.png" class="img-fluid custom-circle-image team-image me-4" alt="">
+                                <div class="team-image-container me-4">
+                                    <img src="/img/15.png" class="team-image" alt="Phal SreyNet">
+                                </div>
 
                                 <div class="team-info">
                                     <h5 class="mb-0">Phal SreyNet</h5>
                                     <strong class="text-muted">Member Project</strong>
 
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn custom-modal-btn" data-bs-toggle="modal" data-bs-target="#marie">
+                                    <button type="button" class="btn custom-modal-btn text-danger" data-bs-toggle="modal" data-bs-target="#marie">
+                                        <i class="bi-plus-circle-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4 col-12">
+                            <div class="team-thumb d-flex align-items-center">
+                                <div class="team-image-container me-4">
+                                    <img src="/img/lili.png" class="team-image" alt="Puthea Silyly">
+                                </div>
+
+                                <div class="team-info">
+                                    <h5 class="mb-0">Puthea Silyly</h5>
+                                    <strong class="text-muted">Member Project</strong>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn custom-modal-btn text-danger" data-bs-toggle="modal" data-bs-target="#lili">
+                                      <i class="bi-plus-circle-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="col-lg-4 mb-4 col-12">
+                            <div class="team-thumb d-flex align-items-center">
+                                <div class="team-image-container me-4">
+                                    <img src="/img/sna.png" class="team-image" alt="Phol Veasna">
+                                </div>
+
+                                <div class="team-info">
+                                    <h5 class="mb-0">Phol Veasna</h5>
+                                    <strong class="text-muted">Member Project</strong>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn custom-modal-btn text-danger" data-bs-toggle="modal" data-bs-target="#veasna">
                                       <i class="bi-plus-circle-fill"></i>
                                     </button>
                                 </div>
@@ -218,8 +291,9 @@
                                     <p class="lead text-danger" style="font-weight: 400;">Hear from our happy customers who trust Love Skincare for their daily beauty routine. Quality products, visible results, and glowing skin — every day.</p>
 
                                     <div class="slick-testimonial-client d-flex align-items-center mt-4">
-                                        <img src="/img/16.png" class="img-fluid custom-circle-image me-3" alt="">
-
+                                        <div class="team-image-container me-3">
+                                            <img src="/img/16.png" class="team-image" alt="Darina">
+                                        </div>
                                         <span>I'm a Darina <strong class="text-muted">and I am a personal user.</strong></span>
                                     </div>
                                 </div>
@@ -300,7 +374,7 @@
                 
                             <div class="col-lg-6 col-12">
                                 <p>
-                                    It’s more than just code — it’s a creative learning experience combining design, user interaction, and real data handling.
+                                    It's more than just code — it's a creative learning experience combining design, user interaction, and real data handling.
                                     The platform is also inspired by modern UI/UX standards for small business or startup use.
                                 </p>
                             </div>
@@ -339,7 +413,7 @@
                 
                             <div class="col-lg-6 col-12">
                                 <p>
-                                    It’s more than just code — it’s a creative learning experience combining design, user interaction, and real data handling.
+                                    It's more than just code — it's a creative learning experience combining design, user interaction, and real data handling.
                                     The platform is also inspired by modern UI/UX standards for small business or startup use.
                                 </p>
                             </div>
@@ -378,7 +452,87 @@
                 
                             <div class="col-lg-6 col-12">
                                 <p>
-                                    It’s more than just code — it’s a creative learning experience combining design, user interaction, and real data handling.
+                                    It's more than just code — it's a creative learning experience combining design, user interaction, and real data handling.
+                                    The platform is also inspired by modern UI/UX standards for small business or startup use.
+                                </p>
+                            </div>
+                        </div>
+                
+                        <ul class="social-icon">
+                            <li class="me-3"><strong>Connect with me:</strong></li>
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>    
+
+            </div>
+        </div>
+
+         <!-- TEAM MEMBER MODAL -->
+         <div class="modal fade" id="veasna" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0">
+                    <div class="modal-header flex-column">
+                        <h3 class="modal-title" id="exampleModalLabel">Phol Veasna</h3>
+                        <h6 class="text-muted">Member – Skincare Project</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="mb-4">Building a practical and modern skincare product platform with a real-world focus.</h5>
+                
+                        <div class="row mb-4">
+                            <div class="col-lg-6 col-12">
+                                <p>
+                                    This project was initiated as part of a team assignment in Class A5 at the Royal University of Phnom Penh.
+                                    Our goal is to showcase product filtering, responsive layout, and e-commerce-style interaction using HTML, CSS, JavaScript, and Bootstrap.
+                                </p>
+                            </div>
+                
+                            <div class="col-lg-6 col-12">
+                                <p>
+                                    It's more than just code — it's a creative learning experience combining design, user interaction, and real data handling.
+                                    The platform is also inspired by modern UI/UX standards for small business or startup use.
+                                </p>
+                            </div>
+                        </div>
+                
+                        <ul class="social-icon">
+                            <li class="me-3"><strong>Connect with me:</strong></li>
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>    
+
+            </div>
+        </div>
+
+         <!-- TEAM MEMBER MODAL -->
+         <div class="modal fade" id="lili" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0">
+                    <div class="modal-header flex-column">
+                        <h3 class="modal-title" id="exampleModalLabel">Puthea Silyly</h3>
+                        <h6 class="text-muted">Member – Skincare Project</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="mb-4">Building a practical and modern skincare product platform with a real-world focus.</h5>
+                
+                        <div class="row mb-4">
+                            <div class="col-lg-6 col-12">
+                                <p>
+                                    This project was initiated as part of a team assignment in Class A5 at the Royal University of Phnom Penh.
+                                    Our goal is to showcase product filtering, responsive layout, and e-commerce-style interaction using HTML, CSS, JavaScript, and Bootstrap.
+                                </p>
+                            </div>
+                
+                            <div class="col-lg-6 col-12">
+                                <p>
+                                    It's more than just code — it's a creative learning experience combining design, user interaction, and real data handling.
                                     The platform is also inspired by modern UI/UX standards for small business or startup use.
                                 </p>
                             </div>
